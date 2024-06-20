@@ -1,9 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// Access the environment variable
-const API_KEY = process.env.REACT_APP_NEWS_API_KEY;
-const BASE_URL = 'https://newsapi.org/v2';
+const API_KEY = process.env.REACT_APP_NEWS_API;
+const BASE_URL = process.env.REACT_APP_NEWS_API_URL;
 
 export const fetchArticles = createAsyncThunk(
   'articles/fetchArticles',
