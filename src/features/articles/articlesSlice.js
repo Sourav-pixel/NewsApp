@@ -1,15 +1,17 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const API_KEY = process.env.REACT_APP_NEWS_API_KEY;
-const BASE_URL = process.env.REACT_APP_NEWS_API_URL;
+const API_URL = 'https://newsapi.org/v2/top-headlines?country=in&apiKey=f71102107ed64fab991ba3d64369760e';
 
 export const fetchArticles = createAsyncThunk(
   'articles/fetchArticles',
   async ({ category, page, query }) => {
-    const url = query
-      ? `${BASE_URL}/everything?q=${query}&pageSize=10&page=${page}&apiKey=${API_KEY}`
-      : `${BASE_URL}/top-headlines?category=${category}&pageSize=10&page=${page}&apiKey=${API_KEY}`;
+    let url = `${API_URL}&pageSize=10&page=${page}`;
+    if (query) {
+      url = `https://newsapi.org/v2/everything?q=${query}&pageSize=10&page=${page}&apiKey=f71102107ed64fab991ba3d64369760e`;
+    } else if (category) {
+      url = `${API_URL}&category=${category}&pageSize=10&page=${page}`;
+    }
     const response = await axios.get(url);
     return response.data.articles;
   }
