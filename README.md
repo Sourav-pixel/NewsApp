@@ -1,7 +1,7 @@
-#React News Application
+# React News Application
 A responsive news application built with React, Redux Toolkit, and Tailwind CSS. This application fetches news articles from the NewsAPI and allows users to filter articles based on categories, search by keywords, and paginate through the articles. It also includes a feature to save articles as favorites using local storage.
 
-##Features
+## Features
 Fetch news articles from the NewsAPI.
 Filter articles by categories.
 Search for articles by keywords.
@@ -22,19 +22,13 @@ git clone https://github.com/your-username/react-news-app.git
 cd react-news-app
 Install the dependencies:
 
-bash
-Copy code
 npm install
 Create a .env file in the root directory and add your NewsAPI key:
 
-plaintext
-Copy code
 REACT_APP_NEWS_API_KEY=your_news_api_key_here
 Running the Application
 To run the application in development mode, use:
 
-bash
-Copy code
 npm start
 Open http://localhost:3000 to view it in your browser. The page will reload when you make changes.
 
@@ -46,31 +40,8 @@ Copy code
 npm run build
 This will create a build folder with the production build of your application.
 
-Project Structure
-java
-Copy code
-react-news-app/
-├── public/
-├── src/
-│   ├── app/
-│   │   └── store.js
-│   ├── components/
-│   │   ├── ArticleList.js
-│   │   ├── Categories.js
-│   │   ├── Loader.js
-│   │   ├── Navbar.js
-│   │   ├── Pagination.js
-│   │   └── SearchBar.js
-│   ├── features/
-│   │   └── articles/
-│   │       ├── articlesSlice.js
-│   ├── App.js
-│   ├── index.js
-│   └── ...
-├── .env
-├── package.json
-└── README.md
-##Dependencies
+
+## Dependencies
 React: A JavaScript library for building user interfaces.
 Redux Toolkit: The official, recommended way to write Redux logic.
 Axios: A promise-based HTTP client for the browser and Node.js.
